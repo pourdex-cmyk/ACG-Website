@@ -99,9 +99,9 @@ export default function AboutPage() {
             {/* Stats Panel */}
             <div className="grid grid-cols-2 gap-4">
               {[
-                { value: "100+", label: "Engagements Delivered" },
-                { value: "$50M+", label: "Client Value Generated" },
-                { value: "37%", label: "Avg. Efficiency Improvement" },
+                { value: "37%", label: "Avg. Operational Improvement" },
+                { value: "15–25%", label: "Increase in Client Profitability" },
+                { value: "22%", label: "Average Automation ROI" },
                 { value: "60", label: "Days to First Insight" },
               ].map((stat) => (
                 <div

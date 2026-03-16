@@ -9,31 +9,32 @@ const metrics = [
     icon: TrendingUp,
     value: 37,
     suffix: "%",
-    label: "Operational Efficiency Improvements",
-    description: "Average efficiency gains delivered across client engagements",
+    label: "Improvement in Operational Performance",
+    description: "Average operational efficiency gains achieved across ACG engagements",
     color: "#0ea5e9",
   },
   {
     icon: BarChart3,
-    value: 22,
+    value: 0,
+    prefix: "15–25",
     suffix: "%",
-    label: "Automation ROI",
-    description: "Average return on AI automation investment within 12 months",
+    label: "Increase in Client Profitability",
+    description: "Typical profit improvement range delivered through AI-driven process redesign",
     color: "#38bdf8",
+    staticDisplay: true,
   },
   {
     icon: DollarSign,
-    value: 10,
-    prefix: "$",
-    suffix: "M+",
-    label: "Revenue Leakage Recovered",
-    description: "Identified and recovered through process intelligence insights",
+    value: 22,
+    suffix: "%",
+    label: "Average Automation ROI",
+    description: "Return on AI automation investment, typically realized within 12 months",
     color: "#0ea5e9",
   },
   {
     icon: Clock,
     value: 60,
-    suffix: "days",
+    suffix: " days",
     label: "Time to First Insight",
     description: "From engagement start to measurable operational intelligence",
     color: "#38bdf8",
@@ -110,15 +111,23 @@ export function ImpactMetrics() {
                 {/* Value */}
                 <div className="acg-stat-value">
                   <span className="text-4xl lg:text-5xl font-bold text-white leading-none">
-                    {metric.prefix && (
-                      <span className="acg-gradient-text-blue">{metric.prefix}</span>
+                    {(metric as { staticDisplay?: boolean }).staticDisplay ? (
+                      <span className="acg-gradient-text-blue">
+                        {metric.prefix}{metric.suffix}
+                      </span>
+                    ) : (
+                      <>
+                        {metric.prefix && (
+                          <span className="acg-gradient-text-blue">{metric.prefix}</span>
+                        )}
+                        <span className="acg-gradient-text-blue">
+                          <AnimatedCounter value={metric.value} />
+                        </span>
+                        <span className="acg-gradient-text-blue text-2xl lg:text-3xl">
+                          {metric.suffix}
+                        </span>
+                      </>
                     )}
-                    <span className="acg-gradient-text-blue">
-                      <AnimatedCounter value={metric.value} />
-                    </span>
-                    <span className="acg-gradient-text-blue text-2xl lg:text-3xl">
-                      {metric.suffix}
-                    </span>
                   </span>
                 </div>
 
