@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ArrowRight, BarChart2, TrendingUp, AlertTriangle, ShoppingCart, Target, ExternalLink } from "lucide-react";
+import { ArrowRight, BarChart2, TrendingUp, AlertTriangle, ShoppingCart, Target, ExternalLink, Shield, FileText, Brain, Clock, Users } from "lucide-react";
 
 const pourdexFeatures = [
   {
@@ -192,6 +192,128 @@ export function ProductsSection() {
 
           {/* Bottom accent bar */}
           <div className="h-px w-full bg-gradient-to-r from-transparent via-[#0ea5e9]/20 to-transparent" />
+        </motion.div>
+
+        {/* Provaryn Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 32 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
+          className="acg-card rounded-2xl overflow-hidden border border-white/[0.08] mt-8"
+        >
+          <div className="h-px w-full bg-gradient-to-r from-transparent via-[#38bdf8]/40 to-transparent" />
+
+          <div className="p-8 lg:p-12">
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              {/* Left: Product overview */}
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="px-3 py-1 rounded-full bg-[#38bdf8]/10 border border-[#38bdf8]/25">
+                    <span className="text-[#38bdf8] text-xs font-bold tracking-widest uppercase">
+                      ACG Product
+                    </span>
+                  </div>
+                  <span className="px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/25 text-amber-400 text-[10px] font-semibold tracking-wide uppercase">
+                    Under Development
+                  </span>
+                </div>
+
+                <div className="mb-4">
+                  <h3 className="text-4xl font-bold text-white tracking-tight mb-1">
+                    Provaryn
+                  </h3>
+                  <p className="text-[#38bdf8] text-base font-medium">
+                    AI Military Career OS for Veterans
+                  </p>
+                </div>
+
+                <p className="text-[#94a3b8] text-base leading-relaxed mb-4">
+                  Provaryn is an AI-powered platform built to help veterans navigate
+                  the VA claims process — tracking service exposures, symptoms, and medical
+                  records to automatically build evidence-complete disability claims.
+                </p>
+
+                <p className="text-[#94a3b8] text-sm leading-relaxed mb-8">
+                  Developed as part of ACG&apos;s commitment to delivering AI solutions that
+                  create real-world impact beyond commercial clients, Provaryn will be
+                  offered at no cost to veterans. The platform applies ACG&apos;s operational
+                  intelligence methodology to one of the most complex bureaucratic systems
+                  American servicemembers face after service.
+                </p>
+
+                <div className="flex items-center gap-3 p-4 rounded-xl bg-amber-500/5 border border-amber-500/15">
+                  <Clock className="w-5 h-5 text-amber-400 flex-shrink-0" />
+                  <div>
+                    <p className="text-amber-400 text-sm font-semibold">Coming Soon</p>
+                    <p className="text-[#64748b] text-xs mt-0.5">
+                      Currently in development. Free for all veterans upon launch.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right: Features */}
+              <div className="space-y-4">
+                <p className="text-xs text-[#64748b] uppercase tracking-[0.15em] font-semibold mb-5">
+                  Platform Capabilities
+                </p>
+                {[
+                  {
+                    icon: Brain,
+                    title: "AI Claim Builder",
+                    description: "Automatically structures VA disability claims from medical records, exposure history, and service documentation using AI-guided evidence mapping.",
+                  },
+                  {
+                    icon: FileText,
+                    title: "Exposure & Symptom Tracking",
+                    description: "Logs service-connected exposures and symptoms over time, building a longitudinal record that supports nexus letters and claim narratives.",
+                  },
+                  {
+                    icon: Shield,
+                    title: "VA Process Navigation",
+                    description: "Guides veterans step-by-step through the VA claims system — explaining rating criteria, required forms, and how to respond to C&P exams.",
+                  },
+                  {
+                    icon: Users,
+                    title: "Built for Veterans, Free Always",
+                    description: "Provaryn is ACG's commitment to the veteran community. The full platform will be available at no cost — no subscription, no hidden fees.",
+                  },
+                ].map((feature, i) => {
+                  const Icon = feature.icon;
+                  return (
+                    <motion.div
+                      key={feature.title}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={isInView ? { opacity: 1, x: 0 } : {}}
+                      transition={{
+                        duration: 0.5,
+                        delay: 0.3 + i * 0.08,
+                        ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+                      }}
+                      className="flex gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-[#38bdf8]/20 transition-all duration-300 group"
+                    >
+                      <div className="w-9 h-9 rounded-lg bg-[#38bdf8]/10 border border-[#38bdf8]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#38bdf8]/15 transition-colors">
+                        <Icon className="w-4 h-4 text-[#38bdf8]" />
+                      </div>
+                      <div>
+                        <h4 className="text-white text-sm font-semibold mb-1">{feature.title}</h4>
+                        <p className="text-[#64748b] text-xs leading-relaxed">{feature.description}</p>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+
+                <div className="pt-3">
+                  <p className="text-xs text-[#475569] leading-relaxed">
+                    <span className="text-[#38bdf8] font-semibold">No cost to veterans.</span>{" "}
+                    ACG&apos;s contribution to those who served. Contact us to be notified at launch.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="h-px w-full bg-gradient-to-r from-transparent via-[#38bdf8]/15 to-transparent" />
         </motion.div>
 
         {/* "More products coming" teaser */}

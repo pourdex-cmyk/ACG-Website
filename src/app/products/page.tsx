@@ -2,7 +2,7 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { ConsultationCTA } from "@/components/home/ConsultationCTA";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ExternalLink, CheckCircle2, BarChart2, TrendingUp, AlertTriangle, ShoppingCart, Target, BookOpen } from "lucide-react";
+import { ExternalLink, CheckCircle2, BarChart2, TrendingUp, AlertTriangle, ShoppingCart, Target, BookOpen, Shield, FileText, Brain, Clock, Users } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Products",
@@ -223,28 +223,128 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* More products */}
-      <section className="py-16 acg-section-dark">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xs text-[#0ea5e9] uppercase tracking-[0.2em] font-semibold mb-3">
-            What&apos;s Next
-          </p>
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-            More Products in Development
-          </h2>
-          <p className="text-[#64748b] text-base leading-relaxed mb-8">
-            Augmentation Consulting Group is actively developing additional SaaS platforms
-            across other operational domains. Each product applies the same ACG methodology —
-            combining process intelligence, predictive analytics, and AI systems to solve
-            specific industry problems at scale.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 text-sm font-medium text-[#0ea5e9] hover:text-[#38bdf8] transition-colors"
-          >
-            Get in touch to learn about upcoming products
-            <ExternalLink className="w-3.5 h-3.5" />
-          </Link>
+      {/* Provaryn Section */}
+      <section className="py-20 lg:py-28 bg-[#050e1d] overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Product Header */}
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-14">
+            <div>
+              <div className="flex items-center gap-3 mb-4 flex-wrap">
+                <span className="px-3 py-1 rounded-full bg-[#38bdf8]/10 border border-[#38bdf8]/25 text-[#38bdf8] text-xs font-bold tracking-widest uppercase">
+                  ACG Product
+                </span>
+                <span className="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/25 text-amber-400 text-xs font-semibold tracking-wide uppercase">
+                  Under Development
+                </span>
+                <span className="text-[#475569] text-sm">Veterans · Military Careers · VA Claims</span>
+              </div>
+              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-2">Provaryn</h2>
+              <p className="text-[#38bdf8] text-xl font-medium">AI Military Career OS for Veterans</p>
+            </div>
+            <div className="flex items-center gap-3 p-4 rounded-xl bg-amber-500/5 border border-amber-500/20 flex-shrink-0">
+              <Clock className="w-5 h-5 text-amber-400 flex-shrink-0" />
+              <div>
+                <p className="text-amber-400 text-sm font-semibold">Coming Soon</p>
+                <p className="text-[#64748b] text-xs mt-0.5">Free for all veterans at launch</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Overview */}
+          <div className="grid lg:grid-cols-2 gap-16 items-start mb-20">
+            <div className="space-y-5 text-[#94a3b8] text-base leading-relaxed">
+              <p>
+                Provaryn is an AI-powered platform built to help veterans navigate the VA
+                disability claims process — one of the most complex bureaucratic systems
+                American servicemembers face after leaving the military. The platform tracks
+                service exposures, symptoms, and medical records to automatically build
+                evidence-complete disability claims.
+              </p>
+              <p>
+                Traditional VA claims are time-consuming, confusing, and frequently denied
+                on procedural grounds rather than merit. Provaryn applies ACG&apos;s operational
+                intelligence methodology to restructure how veterans approach documentation —
+                building a longitudinal record from day one that supports nexus letters,
+                secondary conditions, and appeals.
+              </p>
+              <p>
+                The AI claim builder structures documentation according to VA rating criteria,
+                identifies gaps in evidence before submission, and guides veterans through
+                each step of the process in plain language — replacing the confusion of
+                navigating VSO offices and dense regulatory language.
+              </p>
+              <div className="p-5 rounded-xl bg-[#38bdf8]/5 border border-[#38bdf8]/15">
+                <p className="text-[#38bdf8] font-semibold text-sm mb-2">Our Commitment</p>
+                <p className="text-[#94a3b8] text-sm leading-relaxed">
+                  Provaryn represents ACG&apos;s commitment to applying our AI expertise for
+                  those who served. The full platform will be available at no cost to
+                  veterans — no subscription, no hidden fees, no catches.
+                </p>
+              </div>
+            </div>
+
+            {/* Outcomes */}
+            <div className="space-y-4">
+              <p className="text-xs text-[#94a3b8] font-semibold tracking-[0.15em] uppercase mb-5">
+                Platform Capabilities
+              </p>
+              {[
+                {
+                  icon: Brain,
+                  title: "AI Claim Builder",
+                  description: "Automatically structures VA disability claims from medical records, exposure history, and service documentation using AI-guided evidence mapping.",
+                },
+                {
+                  icon: FileText,
+                  title: "Exposure & Symptom Tracking",
+                  description: "Logs service-connected exposures and symptoms over time, building a longitudinal record that supports nexus letters and claim narratives.",
+                },
+                {
+                  icon: Shield,
+                  title: "VA Process Navigation",
+                  description: "Guides veterans step-by-step through the VA claims system — explaining rating criteria, required forms, and how to respond to C&P exams.",
+                },
+                {
+                  icon: Users,
+                  title: "Military Career OS",
+                  description: "Stores and organizes the full arc of a veteran's military career — assignments, deployments, MOS history, and service records — in one accessible place.",
+                },
+              ].map((feature) => {
+                const Icon = feature.icon;
+                return (
+                  <div
+                    key={feature.title}
+                    className="flex gap-4 p-5 rounded-xl acg-card"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-[#38bdf8]/10 border border-[#38bdf8]/20 flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-5 h-5 text-[#38bdf8]" />
+                    </div>
+                    <div>
+                      <h4 className="text-white font-semibold text-sm mb-1">{feature.title}</h4>
+                      <p className="text-[#64748b] text-xs leading-relaxed">{feature.description}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* CTA band */}
+          <div className="acg-border-glow rounded-2xl p-8 lg:p-10 text-center" style={{ borderColor: "rgba(56,189,248,0.2)" }}>
+            <h3 className="text-2xl font-bold text-white mb-3">
+              Get Notified When Provaryn Launches
+            </h3>
+            <p className="text-[#64748b] text-sm mb-6 max-w-lg mx-auto">
+              Provaryn is currently in development. If you are a veteran or work with veterans
+              and want to be among the first to access the platform, reach out to ACG directly.
+            </p>
+            <a
+              href="mailto:partners@augmentationcg.onmicrosoft.com?subject=Provaryn%20Launch%20Notification"
+              className="inline-flex items-center gap-2 px-7 py-3 rounded-xl text-sm font-semibold text-white acg-btn-primary relative z-10"
+            >
+              <span className="relative z-10">Contact ACG About Provaryn</span>
+            </a>
+          </div>
         </div>
       </section>
 

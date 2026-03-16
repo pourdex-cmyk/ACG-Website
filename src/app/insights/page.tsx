@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { ConsultationCTA } from "@/components/home/ConsultationCTA";
 import { ArrowRight, Clock } from "lucide-react";
@@ -20,6 +21,7 @@ const articles = [
     readTime: "8 min read",
     date: "March 2025",
     featured: true,
+    photoSeed: 683,
   },
   {
     slug: "process-mining-enterprise-guide",
@@ -30,6 +32,7 @@ const articles = [
     readTime: "6 min read",
     date: "February 2025",
     featured: false,
+    photoSeed: 180,
   },
   {
     slug: "intercompany-ai-organizations",
@@ -40,6 +43,7 @@ const articles = [
     readTime: "7 min read",
     date: "January 2025",
     featured: false,
+    photoSeed: 430,
   },
   {
     slug: "ai-implementation-failure-modes",
@@ -50,6 +54,7 @@ const articles = [
     readTime: "9 min read",
     date: "December 2024",
     featured: false,
+    photoSeed: 48,
   },
   {
     slug: "healthcare-process-intelligence",
@@ -60,6 +65,7 @@ const articles = [
     readTime: "6 min read",
     date: "November 2024",
     featured: false,
+    photoSeed: 366,
   },
   {
     slug: "predictive-analytics-data-readiness",
@@ -70,6 +76,7 @@ const articles = [
     readTime: "5 min read",
     date: "October 2024",
     featured: false,
+    photoSeed: 119,
   },
 ];
 
@@ -86,7 +93,6 @@ export default function InsightsPage() {
         <div className="absolute inset-0 acg-hero-gradient" />
         <div className="absolute inset-0 acg-grid-pattern opacity-30" />
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#1565c0]/15 blur-[130px] rounded-full pointer-events-none" />
-
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-xs text-[#0ea5e9] uppercase tracking-[0.2em] font-semibold mb-4">AI Insights</p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
@@ -129,25 +135,30 @@ export default function InsightsPage() {
             <Link href={`/insights/${featuredArticle.slug}`} className="block group">
               <div className="acg-card acg-card-hover rounded-2xl overflow-hidden">
                 <div className="flex flex-col lg:flex-row">
-                  <div
-                    className="lg:w-2/5 h-56 lg:h-auto relative overflow-hidden"
-                    style={{
-                      background: "linear-gradient(135deg, #0a1628 0%, #1565c0 50%, #0ea5e9 100%)",
-                      minHeight: "240px",
-                    }}
-                  >
-                    <div className="absolute inset-0 acg-grid-pattern opacity-40" />
-                    <div className="absolute inset-0 flex items-end p-8">
-                      <span className="px-3 py-1.5 rounded-lg bg-[#0ea5e9]/20 border border-[#0ea5e9]/30 text-[#0ea5e9] text-xs font-semibold uppercase tracking-wide">
+                  {/* Photo */}
+                  <div className="lg:w-2/5 h-56 lg:h-auto relative overflow-hidden" style={{ minHeight: "280px" }}>
+                    <Image
+                      src={`https://picsum.photos/seed/${featuredArticle.photoSeed}/900/500`}
+                      alt={featuredArticle.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                    />
+                    {/* Dark overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#050e1d]/60 via-transparent to-transparent lg:bg-gradient-to-br lg:from-[#050e1d]/50 lg:to-transparent" />
+                    {/* Badges */}
+                    <div className="absolute bottom-4 left-4">
+                      <span className="px-3 py-1.5 rounded-lg bg-[#0ea5e9]/20 backdrop-blur-sm border border-[#0ea5e9]/40 text-[#0ea5e9] text-xs font-semibold uppercase tracking-wide">
                         {featuredArticle.category}
                       </span>
                     </div>
-                    <div className="absolute top-6 right-6">
-                      <span className="px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white text-xs font-medium">
+                    <div className="absolute top-4 right-4">
+                      <span className="px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-medium">
                         Featured
                       </span>
                     </div>
                   </div>
+                  {/* Content */}
                   <div className="flex-1 p-8 lg:p-10 flex flex-col justify-center">
                     <h2 className="text-white font-bold text-2xl lg:text-3xl leading-snug mb-4 group-hover:text-[#90caf9] transition-colors">
                       {featuredArticle.title}
@@ -182,24 +193,25 @@ export default function InsightsPage() {
             {regularArticles.map((article) => (
               <Link key={article.slug} href={`/insights/${article.slug}`} className="block group">
                 <div className="acg-card acg-card-hover rounded-2xl overflow-hidden h-full flex flex-col">
-                  <div
-                    className="h-40 relative overflow-hidden flex-shrink-0"
-                    style={{
-                      background: "linear-gradient(135deg, #0a1628 0%, #1565c0 50%, #0ea5e9 100%)",
-                      opacity: 0.8,
-                    }}
-                  >
-                    <div
-                      className="absolute inset-0"
-                      style={{ background: "linear-gradient(135deg, #0a1628 0%, #1565c0 50%, #0ea5e9 100%)" }}
+                  {/* Photo */}
+                  <div className="h-48 relative overflow-hidden flex-shrink-0">
+                    <Image
+                      src={`https://picsum.photos/seed/${article.photoSeed}/800/400`}
+                      alt={article.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
-                    <div className="absolute inset-0 acg-grid-pattern opacity-40" />
-                    <div className="absolute bottom-4 left-4">
-                      <span className="px-2.5 py-1 rounded-md bg-[#0ea5e9]/20 border border-[#0ea5e9]/30 text-[#0ea5e9] text-[10px] font-semibold uppercase tracking-wide">
+                    {/* Gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/90 via-[#0a1628]/30 to-transparent" />
+                    {/* Category badge */}
+                    <div className="absolute bottom-3 left-4">
+                      <span className="px-2.5 py-1 rounded-md bg-[#050e1d]/70 backdrop-blur-sm border border-[#0ea5e9]/30 text-[#0ea5e9] text-[10px] font-semibold uppercase tracking-wide">
                         {article.category}
                       </span>
                     </div>
                   </div>
+                  {/* Content */}
                   <div className="p-5 flex flex-col gap-3 flex-1">
                     <h3 className="text-white font-semibold text-sm leading-snug group-hover:text-[#90caf9] transition-colors">
                       {article.title}

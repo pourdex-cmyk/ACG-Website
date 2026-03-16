@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight, Clock } from "lucide-react";
@@ -14,6 +15,7 @@ const articles = [
     readTime: "8 min read",
     href: "/insights/future-of-ai-driven-operations",
     date: "March 2025",
+    photoSeed: 683,
   },
   {
     category: "Process Mining",
@@ -23,6 +25,7 @@ const articles = [
     readTime: "6 min read",
     href: "/insights/process-mining-enterprise-guide",
     date: "February 2025",
+    photoSeed: 180,
   },
   {
     category: "Predictive Analytics",
@@ -32,6 +35,7 @@ const articles = [
     readTime: "7 min read",
     href: "/insights/intercompany-ai-organizations",
     date: "January 2025",
+    photoSeed: 430,
   },
 ];
 
@@ -76,18 +80,18 @@ export function InsightsPreview() {
                 href={article.href}
                 className="acg-card acg-card-hover rounded-2xl overflow-hidden flex flex-col h-full group"
               >
-                {/* Image placeholder with gradient */}
+                {/* Article photo */}
                 <div className="relative h-40 overflow-hidden">
-                  <div
-                    className="absolute inset-0"
-                    style={{
-                      background: `linear-gradient(135deg, #0a1628 0%, #1565c0 50%, #0ea5e9 100%)`,
-                      opacity: 0.7,
-                    }}
+                  <Image
+                    src={`https://picsum.photos/seed/${article.photoSeed}/800/400`}
+                    alt={article.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    sizes="(max-width: 1024px) 100vw, 33vw"
                   />
-                  <div className="absolute inset-0 acg-grid-pattern opacity-40" />
-                  <div className="absolute bottom-4 left-4">
-                    <span className="px-2.5 py-1 rounded-md bg-[#0ea5e9]/20 border border-[#0ea5e9]/30 text-[#0ea5e9] text-[10px] font-semibold uppercase tracking-wide">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/90 via-[#0a1628]/30 to-transparent" />
+                  <div className="absolute bottom-3 left-4">
+                    <span className="px-2.5 py-1 rounded-md bg-[#050e1d]/70 backdrop-blur-sm border border-[#0ea5e9]/30 text-[#0ea5e9] text-[10px] font-semibold uppercase tracking-wide">
                       {article.category}
                     </span>
                   </div>

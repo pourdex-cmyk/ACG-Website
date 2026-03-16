@@ -1,9 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { ConsultationCTA } from "@/components/home/ConsultationCTA";
 import { ArrowRight, Clock, ArrowLeft } from "lucide-react";
+
+const articlePhotoSeeds: Record<string, number> = {
+  "future-of-ai-driven-operations": 683,
+  "process-mining-enterprise-guide": 180,
+  "intercompany-ai-organizations": 430,
+  "ai-implementation-failure-modes": 48,
+  "healthcare-process-intelligence": 366,
+  "predictive-analytics-data-readiness": 119,
+};
 
 const articles: Record<string, {
   slug: string;
@@ -258,6 +268,23 @@ export default async function InsightArticlePage({
                 {article.readTime}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Hero Image */}
+      <section className="relative bg-[#020912]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative h-64 sm:h-80 lg:h-96 rounded-2xl overflow-hidden -mt-6">
+            <Image
+              src={`https://picsum.photos/seed/${articlePhotoSeeds[article.slug] ?? 42}/1200/500`}
+              alt={article.title}
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 1280px) 100vw, 1200px"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#020912]/70 via-transparent to-transparent" />
           </div>
         </div>
       </section>
