@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MapPin, Phone, Mail, Linkedin, Twitter, ArrowUpRight } from "lucide-react";
+import { MapPin, Phone, Mail, Linkedin, Twitter, ArrowUpRight, ExternalLink } from "lucide-react";
 
 const footerLinks = {
   services: [
@@ -12,9 +12,9 @@ const footerLinks = {
   company: [
     { label: "About ACG", href: "/about" },
     { label: "Our Methodology", href: "/methodology" },
-    { label: "Case Studies", href: "/case-studies" },
     { label: "AI Insights", href: "/insights" },
     { label: "Industries", href: "/industries" },
+    { label: "Products", href: "/products" },
   ],
   contact: [
     { label: "Contact Us", href: "/contact" },
@@ -70,18 +70,18 @@ export function Footer() {
                 </span>
               </a>
               <a
-                href="tel:+18005550000"
+                href="tel:+18603211121"
                 className="flex items-center gap-2.5 text-sm text-[#64748b] hover:text-white transition-colors"
               >
                 <Phone className="w-4 h-4 text-[#0ea5e9] flex-shrink-0" />
-                <span>+1 (800) 555-0000</span>
+                <span>(860) 321-1121</span>
               </a>
               <a
-                href="mailto:info@augmentationcg.com"
+                href="mailto:partners@augmentationcg.onmicrosoft.com"
                 className="flex items-center gap-2.5 text-sm text-[#64748b] hover:text-white transition-colors"
               >
                 <Mail className="w-4 h-4 text-[#0ea5e9] flex-shrink-0" />
-                <span>info@augmentationcg.com</span>
+                <span>partners@augmentationcg.onmicrosoft.com</span>
               </a>
             </div>
 
@@ -167,18 +167,21 @@ export function Footer() {
               ))}
             </ul>
 
-            {/* Newsletter teaser */}
-            <div className="pt-4">
-              <p className="text-xs text-[#64748b] mb-3 leading-relaxed">
-                Subscribe for AI operations insights.
+            {/* Products */}
+            <div className="pt-4 border-t border-white/[0.05]">
+              <p className="text-xs text-[#94a3b8] font-semibold tracking-[0.15em] uppercase mb-3">
+                Our Products
               </p>
-              <Link
-                href="/insights"
-                className="inline-flex items-center gap-1.5 text-xs text-[#0ea5e9] hover:text-[#38bdf8] transition-colors font-medium"
+              <a
+                href="https://www.pourdex.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-sm text-[#0ea5e9] hover:text-[#38bdf8] transition-colors font-medium group/prd"
               >
-                View Insights
-                <ArrowUpRight className="w-3 h-3" />
-              </Link>
+                Pourdex
+                <ExternalLink className="w-3 h-3 opacity-60 group-hover/prd:opacity-100 transition-opacity" />
+              </a>
+              <p className="text-[#475569] text-xs mt-1">Bar Intelligence Platform</p>
             </div>
           </div>
         </div>

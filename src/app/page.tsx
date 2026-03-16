@@ -5,7 +5,7 @@ import { ServicesOverview } from "@/components/home/ServicesOverview";
 import { MethodologyPreview } from "@/components/home/MethodologyPreview";
 import { WhyACG } from "@/components/home/WhyACG";
 import { IndustriesSection } from "@/components/home/IndustriesSection";
-import { CaseStudiesPreview } from "@/components/home/CaseStudiesPreview";
+import { ProductsSection } from "@/components/home/ProductsSection";
 import { InsightsPreview } from "@/components/home/InsightsPreview";
 import { ConsultationCTA } from "@/components/home/ConsultationCTA";
 
@@ -18,7 +18,7 @@ export default function HomePage() {
       <MethodologyPreview />
       <WhyACG />
       <IndustriesSection />
-      <CaseStudiesPreview />
+      <ProductsSection />
       <InsightsPreview />
       <ConsultationCTA />
     </PageLayout>

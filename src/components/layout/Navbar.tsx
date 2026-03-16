@@ -33,7 +33,13 @@ const navItems = [
       { label: "Enterprise SaaS", href: "/industries/enterprise-saas" },
     ],
   },
-  { label: "Case Studies", href: "/case-studies" },
+  {
+    label: "Products",
+    href: "/products",
+    children: [
+      { label: "Pourdex — Bar Intelligence Platform", href: "https://www.pourdex.com/", external: true },
+    ],
+  },
   { label: "AI Insights", href: "/insights" },
   { label: "Contact", href: "/contact" },
 ];
@@ -123,18 +129,33 @@ export function Navbar() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 8 }}
                         transition={{ duration: 0.15, ease: "easeOut" }}
-                        className="absolute top-full left-1/2 -translate-x-1/2 pt-2 min-w-[240px]"
+                        className="absolute top-full left-1/2 -translate-x-1/2 pt-2 min-w-[260px]"
                       >
                         <div className="acg-card rounded-xl overflow-hidden border border-white/[0.08] shadow-2xl shadow-black/50">
-                          {item.children.map((child) => (
-                            <Link
-                              key={child.href}
-                              href={child.href}
-                              className="block px-4 py-3 text-sm text-[#94a3b8] hover:text-white hover:bg-white/[0.05] transition-all duration-150 border-b border-white/[0.04] last:border-0"
-                            >
-                              {child.label}
-                            </Link>
-                          ))}
+                          {item.children.map((child) =>
+                            (child as { external?: boolean }).external ? (
+                              <a
+                                key={child.href}
+                                href={child.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center justify-between px-4 py-3 text-sm text-[#94a3b8] hover:text-white hover:bg-white/[0.05] transition-all duration-150 border-b border-white/[0.04] last:border-0 group/ext"
+                              >
+                                {child.label}
+                                <span className="text-[#0ea5e9] text-[10px] opacity-60 group-hover/ext:opacity-100">
+                                  ↗
+                                </span>
+                              </a>
+                            ) : (
+                              <Link
+                                key={child.href}
+                                href={child.href}
+                                className="block px-4 py-3 text-sm text-[#94a3b8] hover:text-white hover:bg-white/[0.05] transition-all duration-150 border-b border-white/[0.04] last:border-0"
+                              >
+                                {child.label}
+                              </Link>
+                            )
+                          )}
                         </div>
                       </motion.div>
                     )}
@@ -191,15 +212,27 @@ export function Navbar() {
                   </Link>
                   {item.children && (
                     <div className="ml-4 mt-1 space-y-0.5 border-l border-white/[0.06] pl-3">
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.href}
-                          href={child.href}
-                          className="block px-3 py-2 text-xs text-[#64748b] hover:text-white transition-colors rounded-lg hover:bg-white/[0.04]"
-                        >
-                          {child.label}
-                        </Link>
-                      ))}
+                      {item.children.map((child) =>
+                        (child as { external?: boolean }).external ? (
+                          <a
+                            key={child.href}
+                            href={child.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block px-3 py-2 text-xs text-[#64748b] hover:text-white transition-colors rounded-lg hover:bg-white/[0.04]"
+                          >
+                            {child.label} ↗
+                          </a>
+                        ) : (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            className="block px-3 py-2 text-xs text-[#64748b] hover:text-white transition-colors rounded-lg hover:bg-white/[0.04]"
+                          >
+                            {child.label}
+                          </Link>
+                        )
+                      )}
                     </div>
                   )}
                 </div>

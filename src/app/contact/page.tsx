@@ -112,14 +112,14 @@ export default function ContactPage() {
                   {
                     icon: <Mail className="w-5 h-5" />,
                     label: "Email",
-                    value: "info@augmentationcg.com",
-                    href: "mailto:info@augmentationcg.com",
+                    value: "partners@augmentationcg.onmicrosoft.com",
+                    href: "mailto:partners@augmentationcg.onmicrosoft.com",
                   },
                   {
                     icon: <Phone className="w-5 h-5" />,
                     label: "Phone",
-                    value: "+1 (800) 555-0192",
-                    href: "tel:+18005550192",
+                    value: "(860) 321-1121",
+                    href: "tel:+18603211121",
                   },
                   {
                     icon: <MapPin className="w-5 h-5" />,
