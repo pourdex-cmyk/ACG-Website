@@ -36,6 +36,33 @@ const values = [
   },
 ];
 
+const leadership = [
+  {
+    name: "Mitchell Karangekis",
+    title: "Co-Founder & Chief Executive Officer",
+    bio: "Mitchell Karangekis leads Augmentation Consulting Group with a focus on operational strategy, project management, and process optimization. A former Special Operations Combat Medic, he brings the discipline of high-stakes decision-making to every client engagement. His professional experience spans complex project delivery, AI implementation, and process redesign across healthcare and technology sectors. Mitchell drives the firm's strategic direction and oversees delivery of client outcomes.",
+    initials: "MK",
+  },
+  {
+    name: "Richard Tillotson",
+    title: "Co-Founder & Partner",
+    bio: "Richard Tillotson co-founded Augmentation Consulting Group and focuses on managing internal operations, training systems, knowledge management, and partnership development. A former Special Operations Team Leader, Richard applies military-grade operational discipline to the firm's internal processes and external relationships. His background includes leading organization-wide process improvement initiatives across multiple departments and managing operations in complex, fast-moving environments.",
+    initials: "RT",
+  },
+  {
+    name: "Robert McQueen",
+    title: "Chief Operating Officer",
+    bio: "Robert McQueen serves as Chief Operating Officer of Augmentation Consulting Group, overseeing day-to-day operations and ensuring the consistent delivery of the firm's methodology across all client engagements. Robert brings deep operational leadership experience to the role, with a focus on execution quality, team performance, and scalable delivery systems that allow ACG to serve clients at enterprise scale without compromising rigor.",
+    initials: "RM",
+  },
+  {
+    name: "Jordan Suter",
+    title: "Co-Founder & Chief Financial Officer",
+    bio: "Jordan Suter leads financial strategy at Augmentation Consulting Group, driving sustainable growth through disciplined planning, risk management, and data-driven decision-making. As CFO and co-founder, Jordan plays a central role in shaping the firm's long-term vision and ensuring that ACG's financial infrastructure supports its operational and strategic ambitions. His approach integrates financial discipline with the analytical rigor that defines ACG's broader methodology.",
+    initials: "JS",
+  },
+];
+
 export default function AboutPage() {
   return (
     <PageLayout>
@@ -102,7 +129,7 @@ export default function AboutPage() {
                 { value: "37%", label: "Avg. Operational Improvement" },
                 { value: "15–25%", label: "Increase in Client Profitability" },
                 { value: "22%", label: "Average Automation ROI" },
-                { value: "60", label: "Days to First Insight" },
+                { value: "60 days", label: "Time to First Insight" },
               ].map((stat) => (
                 <div
                   key={stat.label}
@@ -117,8 +144,64 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values */}
+      {/* Leadership */}
       <section className="py-20 lg:py-28 acg-section-dark">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <p className="text-xs text-[#0ea5e9] uppercase tracking-[0.2em] font-semibold mb-3">
+              Leadership
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">
+              The Team Behind ACG
+            </h2>
+            <p className="mt-4 text-[#64748b] max-w-xl mx-auto text-base">
+              A leadership team that combines operational consulting expertise, military-grade
+              execution discipline, and enterprise technology depth.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {leadership.map((person) => (
+              <div
+                key={person.name}
+                className="acg-card acg-card-hover rounded-2xl p-7 flex flex-col gap-5"
+              >
+                {/* Avatar + Name */}
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 relative overflow-hidden"
+                    style={{
+                      background: "linear-gradient(135deg, #1565c0 0%, #0ea5e9 100%)",
+                    }}
+                  >
+                    <span className="text-white font-bold text-lg tracking-wide relative z-10">
+                      {person.initials}
+                    </span>
+                  </div>
+                  <div>
+                    <h3 className="text-white font-semibold text-lg leading-tight">
+                      {person.name}
+                    </h3>
+                    <p className="text-[#0ea5e9] text-sm font-medium mt-0.5">
+                      {person.title}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Divider */}
+                <div className="h-px bg-gradient-to-r from-[#0ea5e9]/20 via-[#0ea5e9]/10 to-transparent" />
+
+                {/* Bio */}
+                <p className="text-[#94a3b8] text-sm leading-relaxed">
+                  {person.bio}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="py-20 lg:py-28 bg-[#020912]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <p className="text-xs text-[#0ea5e9] uppercase tracking-[0.2em] font-semibold mb-3">
@@ -146,7 +229,7 @@ export default function AboutPage() {
       </section>
 
       {/* Location */}
-      <section className="py-16 bg-[#020912]">
+      <section className="py-16 acg-section-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="acg-card rounded-2xl p-8 lg:p-12 text-center acg-border-glow">
             <p className="text-xs text-[#0ea5e9] uppercase tracking-[0.2em] font-semibold mb-3">
