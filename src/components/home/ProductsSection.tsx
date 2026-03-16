@@ -194,7 +194,7 @@ export function ProductsSection() {
           <div className="h-px w-full bg-gradient-to-r from-transparent via-[#0ea5e9]/20 to-transparent" />
         </motion.div>
 
-        {/* Provaryn Card */}
+        {/* Valor Claims OS Card */}
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -220,7 +220,7 @@ export function ProductsSection() {
 
                 <div className="mb-4">
                   <h3 className="text-4xl font-bold text-white tracking-tight mb-1">
-                    Provaryn
+                    Valor Claims OS
                   </h3>
                   <p className="text-[#38bdf8] text-base font-medium">
                     AI Military Career OS for Veterans
@@ -228,14 +228,14 @@ export function ProductsSection() {
                 </div>
 
                 <p className="text-[#94a3b8] text-base leading-relaxed mb-4">
-                  Provaryn is an AI-powered platform built to help veterans navigate
+                  Valor Claims OS is an AI-powered platform built to help veterans navigate
                   the VA claims process — tracking service exposures, symptoms, and medical
                   records to automatically build evidence-complete disability claims.
                 </p>
 
                 <p className="text-[#94a3b8] text-sm leading-relaxed mb-8">
                   Developed as part of ACG&apos;s commitment to delivering AI solutions that
-                  create real-world impact beyond commercial clients, Provaryn will be
+                  create real-world impact beyond commercial clients, Valor Claims OS will be
                   offered at no cost to veterans. The platform applies ACG&apos;s operational
                   intelligence methodology to one of the most complex bureaucratic systems
                   American servicemembers face after service.
@@ -276,7 +276,7 @@ export function ProductsSection() {
                   {
                     icon: Users,
                     title: "Built for Veterans, Free Always",
-                    description: "Provaryn is ACG's commitment to the veteran community. The full platform will be available at no cost — no subscription, no hidden fees.",
+                    description: "Valor Claims OS is ACG's commitment to the veteran community. The full platform will be available at no cost — no subscription, no hidden fees.",
                   },
                 ].map((feature, i) => {
                   const Icon = feature.icon;

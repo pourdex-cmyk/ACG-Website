@@ -223,7 +223,7 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* Provaryn Section */}
+      {/* Valor Claims OS Section */}
       <section className="py-20 lg:py-28 bg-[#050e1d] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Product Header */}
@@ -238,7 +238,7 @@ export default function ProductsPage() {
                 </span>
                 <span className="text-[#475569] text-sm">Veterans · Military Careers · VA Claims</span>
               </div>
-              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-2">Provaryn</h2>
+              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-2">Valor Claims OS</h2>
               <p className="text-[#38bdf8] text-xl font-medium">AI Military Career OS for Veterans</p>
             </div>
             <div className="flex items-center gap-3 p-4 rounded-xl bg-amber-500/5 border border-amber-500/20 flex-shrink-0">
@@ -254,7 +254,7 @@ export default function ProductsPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-start mb-20">
             <div className="space-y-5 text-[#94a3b8] text-base leading-relaxed">
               <p>
-                Provaryn is an AI-powered platform built to help veterans navigate the VA
+                Valor Claims OS is an AI-powered platform built to help veterans navigate the VA
                 disability claims process — one of the most complex bureaucratic systems
                 American servicemembers face after leaving the military. The platform tracks
                 service exposures, symptoms, and medical records to automatically build
@@ -262,7 +262,7 @@ export default function ProductsPage() {
               </p>
               <p>
                 Traditional VA claims are time-consuming, confusing, and frequently denied
-                on procedural grounds rather than merit. Provaryn applies ACG&apos;s operational
+                on procedural grounds rather than merit. Valor Claims OS applies ACG&apos;s operational
                 intelligence methodology to restructure how veterans approach documentation —
                 building a longitudinal record from day one that supports nexus letters,
                 secondary conditions, and appeals.
@@ -276,7 +276,7 @@ export default function ProductsPage() {
               <div className="p-5 rounded-xl bg-[#38bdf8]/5 border border-[#38bdf8]/15">
                 <p className="text-[#38bdf8] font-semibold text-sm mb-2">Our Commitment</p>
                 <p className="text-[#94a3b8] text-sm leading-relaxed">
-                  Provaryn represents ACG&apos;s commitment to applying our AI expertise for
+                  Valor Claims OS represents ACG&apos;s commitment to applying our AI expertise for
                   those who served. The full platform will be available at no cost to
                   veterans — no subscription, no hidden fees, no catches.
                 </p>
@@ -332,17 +332,17 @@ export default function ProductsPage() {
           {/* CTA band */}
           <div className="acg-border-glow rounded-2xl p-8 lg:p-10 text-center" style={{ borderColor: "rgba(56,189,248,0.2)" }}>
             <h3 className="text-2xl font-bold text-white mb-3">
-              Get Notified When Provaryn Launches
+              Get Notified When Valor Claims OS Launches
             </h3>
             <p className="text-[#64748b] text-sm mb-6 max-w-lg mx-auto">
-              Provaryn is currently in development. If you are a veteran or work with veterans
+              Valor Claims OS is currently in development. If you are a veteran or work with veterans
               and want to be among the first to access the platform, reach out to ACG directly.
             </p>
             <a
-              href="mailto:partners@augmentationcg.onmicrosoft.com?subject=Provaryn%20Launch%20Notification"
+              href="mailto:partners@augmentationcg.onmicrosoft.com?subject=Valor%20Claims%20OS%20Launch%20Notification"
               className="inline-flex items-center gap-2 px-7 py-3 rounded-xl text-sm font-semibold text-white acg-btn-primary relative z-10"
             >
-              <span className="relative z-10">Contact ACG About Provaryn</span>
+              <span className="relative z-10">Contact ACG About Valor Claims OS</span>
             </a>
           </div>
         </div>
