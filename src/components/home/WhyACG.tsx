@@ -96,7 +96,7 @@ export function WhyACG() {
                   key={item.title}
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
                   className="acg-card rounded-xl p-4 flex flex-col gap-3 hover:border-[#0ea5e9]/20 transition-all duration-300"
                 >
                   <div className="w-9 h-9 rounded-lg bg-[#0ea5e9]/10 border border-[#0ea5e9]/20 flex items-center justify-center flex-shrink-0">

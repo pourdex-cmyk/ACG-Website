@@ -26,7 +26,7 @@ export function ConsultationCTA() {
           ref={ref}
           initial={{ opacity: 0, y: 32 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
         >
           <p className="text-xs text-[#0ea5e9] uppercase tracking-[0.2em] font-semibold mb-4">
             Get Started
