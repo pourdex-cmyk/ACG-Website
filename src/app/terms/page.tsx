@@ -121,7 +121,7 @@ ACG may recommend third-party technology vendors or service providers as part of
 
 Before initiating any formal legal proceedings, the parties agree to attempt in good faith to resolve any dispute through direct negotiation between senior representatives of each party.
 
-If negotiation is unsuccessful, disputes shall be submitted to binding arbitration administered by the American Arbitration Association under its Commercial Arbitration Rules. The arbitration shall take place in Chicago, Illinois. The decision of the arbitrator shall be final and binding and may be entered as a judgment in any court of competent jurisdiction.
+If negotiation is unsuccessful, disputes shall be submitted to binding arbitration administered by the American Arbitration Association under its Commercial Arbitration Rules. The arbitration shall take place in Glastonbury, Connecticut. The decision of the arbitrator shall be final and binding and may be entered as a judgment in any court of competent jurisdiction.
 
 Notwithstanding the foregoing, either party may seek injunctive or other equitable relief in any court of competent jurisdiction for claims involving intellectual property or confidential information.
 
@@ -153,8 +153,8 @@ You may not assign your rights or obligations under these Terms without ACG's pr
 If you have questions about these Terms, please contact us at legal@augmentationcg.com or:
 
 Augmentation Consulting Group, LLC
-123 Innovation Drive, Suite 400
-Chicago, IL 60601`,
+2389 Main St. STE 100
+Glastonbury, CT 06033`,
   },
 ];
 

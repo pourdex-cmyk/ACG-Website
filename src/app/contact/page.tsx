@@ -124,7 +124,7 @@ export default function ContactPage() {
                   {
                     icon: <MapPin className="w-5 h-5" />,
                     label: "Address",
-                    value: "123 Innovation Drive, Suite 400\nChicago, IL 60601",
+                    value: "2389 Main St. STE 100\nGlastonbury, CT 06033",
                     href: null,
                   },
                   {

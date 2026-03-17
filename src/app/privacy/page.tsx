@@ -187,8 +187,8 @@ We encourage you to review this Privacy Policy periodically to stay informed abo
     content: `If you have questions about this Privacy Policy or wish to exercise your privacy rights, please contact us:
 
 Augmentation Consulting Group, LLC
-123 Innovation Drive, Suite 400
-Chicago, IL 60601
+2389 Main St. STE 100
+Glastonbury, CT 06033
 
 Email: privacy@augmentationcg.com
 Phone: +1 (800) (860) 321-1121
